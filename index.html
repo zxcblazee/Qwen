@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Генератор паролей</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>🔐 Генератор паролей</h1>
+
+    <div class="result">
+      <input type="text" id="password" readonly placeholder="Нажмите «Сгенерировать»" />
+      <button id="copy" title="Скопировать" aria-label="Скопировать пароль">📋</button>
+    </div>
+
+    <div class="strength">
+      <span>Надёжность:</span>
+      <div class="bar"><div id="strengthFill" class="bar-fill"></div></div>
+      <span id="strengthLabel">—</span>
+    </div>
+
+    <label class="row">
+      <span>Длина: <b id="lenValue">16</b></span>
+      <input type="range" id="length" min="4" max="64" value="16" />
+    </label>
+
+    <div class="options">
+      <label><input type="checkbox" id="upper" checked /> Заглавные буквы (A-Z)</label>
+      <label><input type="checkbox" id="lower" checked /> Строчные буквы (a-z)</label>
+      <label><input type="checkbox" id="digits" checked /> Цифры (0-9)</label>
+      <label><input type="checkbox" id="symbols" /> Символы (!@#$…)</label>
+      <label><input type="checkbox" id="noAmbiguous" /> Без похожих символов (Il1O0)</label>
+    </div>
+
+    <button id="generate" class="primary">Сгенерировать</button>
+    <p id="toast" class="toast"></p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

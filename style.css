@@ -1,0 +1,149 @@
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --accent: #38bdf8;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 28px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.result {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+#password {
+  flex: 1;
+  background: #0b1220;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  color: var(--accent);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 1rem;
+  padding: 12px;
+  outline: none;
+}
+
+#copy {
+  background: #334155;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  padding: 0 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#copy:hover { background: #475569; }
+
+.strength {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.bar {
+  flex: 1;
+  height: 8px;
+  background: #0b1220;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 6px;
+  background: #64748b;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.row {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.row b { color: var(--text); }
+
+input[type="range"] {
+  width: 100%;
+  margin-top: 8px;
+  accent-color: var(--accent);
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.options input { accent-color: var(--accent); }
+
+.primary {
+  width: 100%;
+  background: var(--accent);
+  color: #0b1220;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 13px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+.primary:hover { filter: brightness(1.1); }
+
+.toast {
+  text-align: center;
+  color: #4ade80;
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.toast.show { opacity: 1; }
